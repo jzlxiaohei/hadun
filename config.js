@@ -1,10 +1,13 @@
-var AppCfg {
-    port: 3000;
-}
-var SequelizeCfg = {
-    db_name: '',
-    username: 'root',
-    password: '111111',
-    port: 3306,
-    dialect: 'mysql'
+var path = require(path);
+var rootPath = path.normalize(__dirname + '/..');
+
+module.exports = {
+    development: {
+        db: 'mongodb://localhost:27017/test',
+        root: rootPath,
+        app: {
+            name: 'hadun online test v1.0'
+        }
+    },
+    production: {}
 }

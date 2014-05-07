@@ -1,30 +1,34 @@
 {
-    "name": "hadun",
-    "version": "0.0.0",
-    "description": "hadun online test",
-    "main": "server.js",
-    "scripts": {
-        "test": "node test.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:jzlxiaohei/hadun.git"
-    },
-    "keywords": [
+  "name": "hadun",
+  "version": "0.0.0",
+  "description": "hadun online test",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jzlxiaohei/hadun.git"
+  },
+  "keywords": [
     "express",
     "math"
   ],
-    "author": "jzl",
-    "license": "",
-    "bugs": {
-        "url": "https://github.com/jzlxiaohei/hadun/issues"
-    },
-    "homepage": "https://github.com/jzlxiaohei/hadun",
-    "dependencies": {
-        "handlebars": "^2.0.0-alpha.2",
-        "koa": "^0.6.0",
-        "koa-views": "^2.0.1",
-        "mysql": "^2.2.0",
-        "sequelize": "^2.0.0-dev11"
-    }
+  "author": "jzl",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/jzlxiaohei/hadun/issues"
+  },
+  "homepage": "https://github.com/jzlxiaohei/hadun",
+  "dependencies": {
+    "debug": "^0.8.1",
+    "handlebars": "^2.0.0-alpha.2",
+    "koa": "^0.6.0",
+    "koa-logger": "^1.2.0",
+    "koa-views": "^2.0.1",
+    "mongoose": "^3.8.8",
+    "mysql": "^2.2.0",
+    "password": "^0.1.0",
+    "sequelize": "^2.0.0-dev11"
+  }
 }

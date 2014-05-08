@@ -26,6 +26,7 @@
     "koa": "^0.6.0",
     "koa-logger": "^1.2.0",
     "koa-views": "^2.0.1",
+    "lodash": "^2.4.1",
     "mongoose": "^3.8.8",
     "mysql": "^2.2.0",
     "password": "^0.1.0",

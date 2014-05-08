@@ -1,4 +1,4 @@
-var koa = require('koa');
+/*var koa = require('koa');
 var views = require('koa-views');
 var Router = require('koa-router');
 
@@ -10,19 +10,7 @@ app.use(router.middleware());
 
 var env = process.env.NODE_ENV || 'development';
 var config = require('./config/config')[env];
-var mongoose = require('mongoose');
 
-var connect = function () {
-    var options = {
-        server: {
-            socketOptions: {
-                keepAlive: 1
-            }
-        }
-    }
-    mongoose.connect(config.db, options)
-}
-connect();
 
 app.use(function * (next) {
     //this.locals={
@@ -32,3 +20,16 @@ app.use(function * (next) {
     this.body = '404';
 });
 app.listen(3000);
+*/
+db = require('./models');
+db.sequelize
+    .sync({
+        force: true
+    })
+    .complete(function (err) {
+        if (err) {
+            throw err
+        } else {
+            console.log("suc")
+        }
+    })

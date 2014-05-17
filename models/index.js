@@ -12,8 +12,8 @@ fs.readdirSync(modelDir)
         return (file.slice(-3) === '.js' && file !== 'index.js')
     })
     .forEach(function (file) {
-        console.log(file);
         var model = sequelize.import(path.join(modelDir, file));
+        console.log(model.name);
         db[model.name] = model;
     })
 

@@ -1,9 +1,20 @@
 module.exports = function (sequelize, DataTypes) {
     var Paper = sequelize.define('Paper', {
-        from: DataTypes.STRING,
-        level: DataTypes.STRING
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        from1: DataTypes.STRING,
+        from2: DataTypes.STRING,
+        hard: DataTypes.STRING,
+        whoTypeIn: DataTypes.STRING,
+        desc: DataTypes.STRING
     }, {
-        createdAt: 'inTime'
+        createdAt: 'inTime',
+        associate: function () {
+            Paper.hasMany(models.Choice);
+        }
     });
     return Paper;
 }

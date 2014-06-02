@@ -13,8 +13,10 @@ module.exports = function (sequelize, DataTypes) {
         desc: DataTypes.STRING,
         sub_type: DataTypes.STRING
     }, {
-        associate: function (models) {
-            //Choice.hasOne(models.Paper);
+        classMethods: {
+            associate: function (models) {
+                Subject.hasMany(models.Category);
+            }
         }
     })
 

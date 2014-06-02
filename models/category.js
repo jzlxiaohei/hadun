@@ -5,8 +5,15 @@ module.exports = function (sequelize, DataTypes) {
             autoIncrement: true,
             primaryKey: true
         },
-        cateName: DataTypes.STRING,
+        categoryName: DataTypes.STRING,
         desc: DataTypes.STRING
 
+    },{
+        classMethods: {
+            associate: function (models) {
+                Category.hasMany(models.Subject);
+            }
+        }
     })
+    return Category;
 }

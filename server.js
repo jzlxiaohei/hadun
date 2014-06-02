@@ -10,9 +10,7 @@ app.use(hbs.middleware({
     extname:'.html'
 }));
 
-var router = new Router(app);
-router.render = app.render;
-app.use(router.middleware());
+app.use(Router(app));
 
 
 var env = process.env.NODE_ENV || 'development';
@@ -31,7 +29,7 @@ db.sequelize
         }
     })
 
-require('./router/main')(router);
+require('./router/main')(app);
 
 
 app.use(function * (next) {

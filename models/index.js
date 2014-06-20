@@ -1,23 +1,30 @@
-var fs = require('fs');
+
 var path = require('path');
 var Sequelize = require('sequelize');
 var lodash = require('lodash');
 var glob = require('glob');
+var config = require('../config')
 
 
-module.exports =function(dbConfig){
-    var sequelize = new Sequelize(dbConfig.database,dbConfig.username,dbConfig.password,
-        dbConfig);
+module.exports =function(){
+    var sequelize = new Sequelize(config.database,config.username,config.password,{
+            dialect:config.dialect,
+            port:config.db_port
+        });
 
     var db = {};
 
-    var indexJs = path.join(__dirname+'/index.js');
-    function filter(file){
-        if(path.join(file)===indexJs)
-            return true;
-        else
-            return false;
-    }
+    var filter = function()
+    {
+        var indexJs = path.join(__dirname+'/index.js');
+        return function(file){
+            if(path.join(file)===indexJs)
+                return true;
+            else
+                return false;
+        }
+    }();
+
     glob.sync(__dirname +'/**/*.js')
         .forEach(function (file) {
             if(filter(file))return;

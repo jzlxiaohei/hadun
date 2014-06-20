@@ -1,25 +1,33 @@
-var koa = require('koa');
-var views = require('koa-views');
-var Router = require('koa-router');
-var hbs = require('koa-hbs');
-var path =require('path');
-var app = koa();
-
-app.use(hbs.middleware({
-    viewPath: __dirname + '/views',
-    extname:'.html'
-}));
-
-app.use(Router(app));
+var express  = require('express');
+var app = express();
 
 
-var env = process.env.NODE_ENV || 'development';
-var appConfig= require('./config/application.config.js')(env);
-var dbConfig = require("./config/db.config")(env);
-var db = require('./models')(dbConfig);
+var config= require('./config');
+var db = require('./models')();
+var bodyParser = require('body-parser');
+
+app.set('view engine', 'html');
+app.engine('html', require('hbs').__express);
+
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
+app.use(express.favicon());
+
+app.use(express.cookieParser());
+app.use(express.cookieSession());
+app.use(express.csrf({secret: config.session_secret}));
+
+app.use(app.router);
+app.use(express.static(__dirname+'/assets'));
+
+//var env = process.env.NODE_ENV || 'development';
+//if ('development' == app.get('env')) {
+//    app.use(express.errorHandler());
+//}
+
 db.sequelize
     .sync({
-        //force: true
+        force: true
     })
     .complete(function (err) {
         if (err) {
@@ -29,15 +37,12 @@ db.sequelize
         }
     })
 
+
 require('./router/main')(app);
 
 
-app.use(function * (next) {
-    //this.locals={
-    //hello : 'from locals'
-    //};
-    this.status = 404;
-    this.body = '404';
+app.use(function(req,res) {
+    res.send('404');
 });
-app.listen(appConfig.port);
+app.listen(config.port);
 

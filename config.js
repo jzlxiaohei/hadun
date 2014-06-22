@@ -7,10 +7,10 @@ module.exports ={
     db_port: 3306,
     database: 'h_test',
     username: 'root',
-    password: '111111',
+    password: '123456',
     dialect: 'mysql',
 
 
     port:3000,
-    session_secret:''
+    session_secret:'tt8zl6tjj09tds'
 }

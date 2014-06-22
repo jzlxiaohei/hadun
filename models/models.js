@@ -16,9 +16,9 @@ module.exports =function(){
 
     var filter = function()
     {
-        var indexJs = path.join(__dirname+'/index.js');
+        var modelsJs = path.join(__dirname+'/models.js');
         return function(file){
-            if(path.join(file)===indexJs)
+            if(path.join(file)===modelsJs)
                 return true;
             else
                 return false;

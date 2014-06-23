@@ -1,0 +1,28 @@
+#for-content{
+    position: relative;
+    top:-50px;
+}
+#new-question-form{
+    margin:20px auto 0;
+}
+#new-question-form label{
+    width: 100px;
+    text-align: center;
+}
+#choice-type{
+    margin:0 0 10px 100px;
+}
+.answer-flag{
+    padding: 3px 10px;
+    border: 2px solid #777;
+    color:#777;
+    border-radius: 5px;
+    margin-left:10px;
+}
+.answer-flag.right{
+    border: 2px solid #ff4400;
+    color:#ff4400;
+}
+.choice-item{
+    margin:5px 0;
+}

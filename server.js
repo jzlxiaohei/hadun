@@ -25,8 +25,8 @@ if ('development' == env) {
     app.use(express.errorHandler());
 }
 
-var db = require('./models/models.js')();
-require('./routers/routers.js')
+var db = require('./models')();
+require('./routers')(app);
 db.sequelize
     .sync({
         force: true

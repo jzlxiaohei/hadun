@@ -9,7 +9,8 @@ module.exports = function (sequelize, DataTypes) {
             ans:DataTypes.STRING(5),
             type:DataTypes.STRING,
             categories:DataTypes.STRING,
-            hard_level:DataTypes.STRING(1)
+            hard_level:DataTypes.STRING(1),
+            img_url:DataTypes.STRING
         }
     );
     return Paper;

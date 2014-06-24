@@ -3,6 +3,6 @@
  */
 module.exports = function(app){
     app.get('/admin/question.html',function(req,res){
-        res.render('admin/question.html')
+        res.render('admin/question.html',{'nav-question':true})
     })
 }

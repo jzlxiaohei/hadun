@@ -4,22 +4,40 @@
     <link href="/css/dic.css" rel="stylesheet">
 
     <body>
-        {{>nav}}
+        {{>nav this}}
         <div id="tabs">
-            <div class="tab-title">题目类别</div>
+            <div id="tab-titles">
+                <div id="add-new-group">添加新组 +</div>
+                <div class="tab-title">题目类别</div>
+                <div class="tab-title">题目类别</div>
+            </div>
             <div class="tab-content">
-                <table>
-                    <tr>
-                        <th>key</th>
-                        <th>value</th>
-                    </tr>
-                    <tr>
-                        <td>{{1}}</td>
-                        <td>{{函数}}</td>
-                    </tr>
-                </table>
+                <p><span class="c-key">1</span><input class="c-value" type="text" value="函数"></p>
+                <p><span class="c-key">1</span><input class="c-value" type="text" value="函数"></p>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#popup-new-dic">添加新项</button>
             </div>
         </div>
 
+
+        <div class="modal fade" id="popup-new-dic">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">添加数据字典<span class="c-title"></span></h4>
+                    </div>
+                    <div class="modal-body">
+                        key:<input class="input-key" type="text">
+                        value:<input class="input-value" type="text">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="add-new-one">在加一个</button>
+                        <button type="button" class="btn btn-primary" id="submit-new">确定添加</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <script src="/js/dic_html.js"></script>
     </body>
 </html>

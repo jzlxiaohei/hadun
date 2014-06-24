@@ -11,10 +11,10 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
 
-                <li class="active"><a href="#">试题管理</a></li>
-                <li><a href="#contact">试卷管理</a></li>
-                <li><a href="#contact">用户管理</a></li>
-                <li><a href="#contact">数据字典</a></li>
+                <li {{#if nav-question}}class="active"{{/if}} ><a href="#">试题管理</a></li>
+                <li {{#if nav-paper}}class="active"{{/if}}><a href="#contact">试卷管理</a></li>
+                <li {{#if nav-user}}class="active"{{/if}}><a href="#contact">用户管理</a></li>
+                <li {{#if nav-dic}}class="active"{{/if}}><a href="#contact">数据字典</a></li>
 
             </ul>
         </div><!--/.nav-collapse -->

@@ -1,0 +1,22 @@
+#tab-titles{
+    float:left;
+    width:200px;
+    text-align: center;
+    background: #3d3d3d;
+
+    color:#fff;
+}
+#add-new-group{
+    padding: 8px;
+    background: #28b779;
+}
+.tab-title{
+    border-top: 1px solid #5c5c5c;
+    padding: 5px
+}
+.tab-content{
+    margin-left: 210px;
+}
+.tab-content .c-key{
+    margin-right: 10px;
+}

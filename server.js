@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var config= require('./config');
 var hbs = require('hbs');
+var formidable = require('formidable');
 
 hbs.registerPartials(__dirname+"/views/partials")
 app.set('view engine', 'html');
@@ -29,7 +30,7 @@ var db = require('./models')();
 require('./routers')(app);
 db.sequelize
     .sync({
-        force: true
+        //force: true
     })
     .complete(function (err) {
         if (err) {

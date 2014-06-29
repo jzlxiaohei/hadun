@@ -4,7 +4,9 @@
 
     <body>
         {{>nav}}
-
+        <script>
+            $('nav-paper').addClass('active').find('a').removeAttr('href');
+        </script>
         <div id="paper">
 
         </div>

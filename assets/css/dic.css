@@ -1,22 +1,53 @@
+body{
+    background: #e3e3e3;
+}
 #tab-titles{
     float:left;
     width:200px;
     text-align: center;
     background: #3d3d3d;
-
     color:#fff;
 }
 #add-new-group{
     padding: 8px;
     background: #28b779;
+    cursor: pointer;
 }
 .tab-title{
     border-top: 1px solid #5c5c5c;
-    padding: 5px
+    padding: 5px;
+    cursor: pointer;
 }
 .tab-content{
-    margin-left: 210px;
+    margin-left: 200px;
+    background: #fff;
 }
 .tab-content .c-key{
     margin-right: 10px;
+}
+.table td,.table th{
+    text-align: center;
+}
+.tab-content .edit{
+    cursor: pointer;
+    color: #005580;
+}
+.tab-content .edit:hover{
+    text-decoration: underline;
+}
+.tab-content .save{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #ff4400;
+}
+.modal-body .input-label{
+    width: 80px;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.dic-title{
+    font-size:1.5em;
+    padding: 15px 0 20px 20px;
+    border-bottom: 2px solid #e3e3e3;
 }

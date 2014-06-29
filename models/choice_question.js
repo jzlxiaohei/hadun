@@ -10,6 +10,7 @@ module.exports = function (sequelize, DataTypes) {
             type:DataTypes.STRING,
             categories:DataTypes.STRING,
             hard_level:DataTypes.STRING(1),
+            paperId:DataTypes.INTEGER,
             img_url:DataTypes.STRING
         }
     );

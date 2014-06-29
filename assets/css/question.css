@@ -1,10 +1,4 @@
-#for-content{
-    position: relative;
-    top:-50px;
-}
-#new-question-form{
-    margin:20px auto 0;
-}
+
 #new-question-form label{
     width: 100px;
     text-align: center;
@@ -25,4 +19,50 @@
 }
 .choice-item{
     margin:5px 0;
+}
+#tab-titles{
+    float:left;
+    width:200px;
+    text-align: center;
+    background: #3d3d3d;
+    color:#fff;
+}
+.tab-title{
+    border-top: 1px solid #5c5c5c;
+    padding: 5px;
+    cursor: pointer;
+}
+.tab-content{
+    margin-left: 200px;
+    background: #fff;
+    padding:20px 0 0 20px;
+}
+.category-tag{
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    padding: 3px 5px;
+    background: #3e3e3e;
+}
+.category-tag.selected{
+   background: #ff4400;
+}
+table .ellipsis{
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.table th,.table td{
+    text-align: center;
+}
+table{
+    table-layout: fixed;
+}
+.pagination-wrapper{
+    text-align: center;
+}
+#new-question-form legend{
+    padding-left:20px
 }

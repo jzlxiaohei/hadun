@@ -16,7 +16,7 @@ app.use(express.favicon());
 
 app.use(express.cookieParser());
 app.use(express.cookieSession({secret: config.session_secret}));
-app.use(express.csrf());
+//app.use(express.csrf());
 
 app.use(app.router);
 app.use(express.static(__dirname+'/assets'));
@@ -26,11 +26,11 @@ if ('development' == env) {
     app.use(express.errorHandler());
 }
 
-var db = require('./models')();
+var db  = global.db = require('./models')();
 require('./routers')(app);
 db.sequelize
     .sync({
-        //force: true
+        force: true
     })
     .complete(function (err) {
         if (err) {

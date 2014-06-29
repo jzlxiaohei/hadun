@@ -66,45 +66,45 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 <h4 class="modal-title">添加数据字典<span class="c-title"></span></h4>
                             </div>
-                            <div class="modal-body">
-                                <form method="post" action="" id="new-question-form">
 
+                            <div class="modal-body">
+                                <form id="new-question-form">
                                     <legend>题干</legend>
                                     <textarea id="question-content" name="content" rows="5" cols="90"></textarea>
                                     <div id="MathPreview" style="border:1px solid; padding: 3px;  margin-top:5px;word-wrap:break-word"></div>
                                     <fieldset id="choices">
                                         <legend>选项</legend>
                                         <div id="choice-type">
-                                            单选<input type="radio" name="choice-type" value="single" checked>
-                                            多选<input type="radio" name="choice-type" value="multi"><br/>
+                                            单选<input type="radio" name="choice-type" value="1" checked>
+                                            多选<input type="radio" name="choice-type" value="2"><br/>
                                         </div>
                                         <div class="choice-item">
                                             <label for="choice-A">A:</label>
-                                            <input id="choice-A" type="text">
-                                            <span class="answer-flag right">此项为正确答案</span><br/>
+                                            <input id="choice-A" class="input-choice" type="text">
+                                            <span class="answer-flag right" >此项为正确答案</span><br/>
                                         </div>
 
                                         <div class="choice-item">
                                             <label for="choice-B">B:</label>
-                                            <input id="choice-B" type="text">
+                                            <input id="choice-B" class="input-choice"  type="text">
                                             <span class="answer-flag">此项为正确答案</span><br/>
                                         </div>
 
                                         <div class="choice-item">
                                             <label for="choice-C">C:</label>
-                                            <input id="choice-C" type="text">
+                                            <input id="choice-C" class="input-choice"  type="text">
                                             <span class="answer-flag">此项为正确答案</span><br/>
                                         </div>
 
                                         <div class="choice-item">
                                             <label for="choice-D">D:</label>
-                                            <input id="choice-D" type="text">
+                                            <input id="choice-D" class="input-choice"  type="text">
                                             <span class="answer-flag">此项为正确答案</span><br/>
                                         </div>
 
                                         <div class="choice-item">
                                             <label for="choice-E">E:</label>
-                                            <input id="choice-E" type="text">
+                                            <input id="choice-E" class="input-choice" type="text">
                                             <span class="answer-flag">此项为正确答案</span><br/>
                                         </div>
                                     </fieldset>
@@ -118,11 +118,14 @@
                                             <!--</div>-->
                                         <!--</div>-->
                                     <!--</fieldset>-->
+                                    <div style="margin-top: 20px;text-align: center">
+                                        <button type="submit" class="btn btn-primary" id="submit-new-key-value">确定添加</button>
+                                    </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                <button type="button" class="btn btn-primary" id="submit-new-key-value">确定添加</button>
+
                             </div>
                         </div>
                     </div>

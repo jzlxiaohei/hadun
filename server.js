@@ -30,7 +30,7 @@ var db  = global.db = require('./models')();
 require('./routers')(app);
 db.sequelize
     .sync({
-        force: true
+        //force: true
     })
     .complete(function (err) {
         if (err) {

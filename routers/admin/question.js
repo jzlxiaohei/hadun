@@ -21,4 +21,14 @@ module.exports = function(app){
             }
         })
     })
+    app.get('/admin/question/list',function(req,res){
+        var index =  req.query.index||1;
+        var pageSize = 10;
+        db.ChoiceQuestion.findAndCountAll({
+            limit:pageSize,
+            offset:(index-1)*pageSize
+        }).success(function(result){
+            res.json({data:result.rows,count:result.count});
+        })
+    })
 }

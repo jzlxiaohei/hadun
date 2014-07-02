@@ -76,6 +76,15 @@ $('#new-question-form').submit(function(e){
             ans.push(ansMap[index]);
         }
     })
+    if(ans.length==0){
+        alert('必须至少有一个正确答案');
+        return;
+    }
+    if(type==1&&ans.length>1){
+        alert('单选只能有一个正确答案');
+        return;
+    }
+
     $.ajax({
         type:'post',
         url:'/admin/question/create',
@@ -89,6 +98,7 @@ $('#new-question-form').submit(function(e){
 })
 
 $('#new-question-form .answer-flag').click(function(){
+    var type = $('input[name=choice-type]:checked', this).val();
     $(this).toggleClass('right');
 })
 
